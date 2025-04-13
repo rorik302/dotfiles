@@ -6,9 +6,13 @@ set -U fish_greeting ""
 
 # zoxide
 zoxide init fish | source
+alias cd="z"
 
 # navi
 navi widget fish | source
+
+# atuin
+atuin init fish | source
 
 # fzf
 fzf --fish | source
@@ -17,7 +21,7 @@ set -gx FZF_CTRL_T_OPTS "--preview 'bat -n --color=always --line-range :500 {}'"
 set -gx FZF_ALT_C_OPTS "--preview 'eza --tree --color=always {} | head -200'"
 
 # eza
-alias ls="eza"
+alias ls="eza -lhaF --color=always --icons --group-directories-first"
 
 # bat
 alias cat="bat"
