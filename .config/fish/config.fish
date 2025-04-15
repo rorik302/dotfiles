@@ -4,6 +4,9 @@ end
 
 set -U fish_greeting ""
 
+# nvim
+set -gx EDITOR nvim
+
 # zoxide
 zoxide init fish | source
 alias cd="z"
