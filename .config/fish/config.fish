@@ -31,3 +31,5 @@ alias cat="bat"
 
 # aliases
 alias pa="pikaur"
+
+set PATH $PATH /home/rorik/.local/bin
