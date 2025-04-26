@@ -13,6 +13,7 @@ o.number = true
 o.scrolloff = 10
 o.shiftwidth = 2
 o.signcolumn = "yes"
+o.sidescrolloff = 10
 o.smartcase = true
 o.smartindent = true
 o.softtabstop = 2
