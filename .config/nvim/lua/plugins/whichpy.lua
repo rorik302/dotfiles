@@ -1,9 +1,23 @@
 return {
 	"neolooong/whichpy.nvim",
-	dependencies = {
-		"mfussenegger/nvim-dap-python",
-	},
+	ft = { "python" },
 	config = function()
-		require("whichpy").setup()
+		require("whichpy").setup({
+			locator = {
+				conda = {
+					enable = false,
+				},
+				pdm = {
+					enable = false,
+				},
+				poetry = {
+					enable = false,
+				},
+				uv = {
+					enable = true,
+					display_name = "uv",
+				},
+			},
+		})
 	end,
 }

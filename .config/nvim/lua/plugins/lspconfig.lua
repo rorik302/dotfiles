@@ -40,6 +40,19 @@ return {
 					end
 				end,
 			})
+
+			require("lspconfig").pyright.setup({
+				settings = {
+					pyright = {
+						disableOrganizeImports = true,
+					},
+					python = {
+						analysis = {
+							ignore = { "*" },
+						},
+					},
+				},
+			})
 		end
 
 		require("lspconfig.ui.windows").default_options.border = "rounded"
