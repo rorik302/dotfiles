@@ -30,6 +30,9 @@ alias ls="eza -lhaF --color=always --icons --group-directories-first"
 # bat
 alias cat="bat"
 
+# yazi
+alias y="yazi"
+
 # aliases
 alias pa="pikaur"
 

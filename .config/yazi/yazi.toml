@@ -1,0 +1,25 @@
+[plugin]
+prepend_previewers = [
+  { mime = "application/bittorrent", run = "torrent-preview" },
+
+  # Office Documents
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { name = "*.docx", run = "office" },
+]
+
+prepend_preloaders = [
+  # Office Documents
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { name = "*.docx", run = "office" },
+]
+
+prepend_fetchers = [
+  { id = "git", name = "*", run = "git" },
+  { id = "git", name = "*/", run = "git" },
+]
