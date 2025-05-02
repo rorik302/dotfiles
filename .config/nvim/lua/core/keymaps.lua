@@ -4,7 +4,10 @@ vim.g.maplocalleader = " "
 local map = require("utils").map
 
 -- Коммандная строка
-map("<leader><leader>", ":", { desc = "Command Line" })
+function OpenCommandLine()
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(":", true, false, true), "n", false)
+end
+map("<leader><Space>", OpenCommandLine)
 
 -- Очистка результатов поиска
 map("<Esc>", ":nohlsearch<CR>", { desc = "Clean Search Highlight" })
@@ -29,3 +32,6 @@ map("<A-h>", "<C-w><", { desc = "Window: Resize Left" })
 map("<A-j>", "<C-w>-", { desc = "Window: Resize Down" })
 map("<A-k>", "<C-w>+", { desc = "Window: Resize Up" })
 map("<A-l>", "<C-w>>", { desc = "Window: Resize Right" })
+
+-- UI
+map("<leader>uw", ":set wrap!<CR>", { desc = "Toggle Wrap" })
