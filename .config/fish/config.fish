@@ -6,6 +6,7 @@ set -U fish_greeting ""
 
 # nvim
 set -gx EDITOR nvim
+alias n="nvim"
 
 # zoxide
 zoxide init fish | source
