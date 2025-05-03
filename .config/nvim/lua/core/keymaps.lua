@@ -3,6 +3,14 @@ vim.g.maplocalleader = " "
 
 local map = require("utils").map
 
+-- Сброс стандартного поведения Space
+map("<Space>", "<Nop>", {}, { "n", "v" })
+
+-- Операции и работа с буфером
+map("x", '"_x', { desc = "Delete without yank" }, { "n", "v" })
+map("d", '"_d', { desc = "Delete without yank" }, { "n", "v" })
+map("p", '"_dP', { desc = "Paste without yank" }, { "n", "v" })
+
 -- Коммандная строка
 function OpenCommandLine()
 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(":", true, false, true), "n", false)
