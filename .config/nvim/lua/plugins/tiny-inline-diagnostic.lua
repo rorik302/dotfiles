@@ -9,6 +9,7 @@ return {
 				show_source = {
 					enabled = true,
 				},
+				use_icons_from_diagnostic = true,
 				multilines = {
 					enabled = true,
 					always_show = true,

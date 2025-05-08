@@ -37,6 +37,7 @@ return {
 			},
 			notifier = {
 				enabled = true,
+				level = "WARN",
 			},
 			picker = {
 				enabled = true,
@@ -145,5 +146,26 @@ return {
 		map("<leader>bD", function()
 			snacks.bufdelete.all()
 		end, { desc = "Buffer: Delete All" })
+
+		-- Terminal
+		map("<leader>tt", function()
+			snacks.terminal()
+		end, { desc = "Terminal: Toggle" })
+
+		-- Lsp progress
+		vim.api.nvim_create_autocmd("LspProgress", {
+			---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
+			callback = function(ev)
+				local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+				vim.notify(vim.lsp.status(), "warn", {
+					id = "lsp_progress",
+					title = "LSP Progress",
+					opts = function(notif)
+						notif.icon = ev.data.params.value.kind == "end" and " "
+							or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
+					end,
+				})
+			end,
+		})
 	end,
 }

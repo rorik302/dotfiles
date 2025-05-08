@@ -2,6 +2,8 @@ return {
 	"neovim/nvim-lspconfig",
 	event = "VeryLazy",
 	config = function()
+		local lsp_config = require("lspconfig")
+
 		local lsp_settings = {
 			lua_ls = {
 				Lua = {
@@ -31,7 +33,7 @@ return {
 		for _, server in ipairs(servers) do
 			local capabilities = vim.tbl_deep_extend("force", {}, lsp_capabilities, server.capabilities or {})
 
-			require("lspconfig")[server].setup({
+			lsp_config[server].setup({
 				capabilities = capabilities,
 				settings = lsp_settings[server],
 				on_attach = function(client)
@@ -41,7 +43,7 @@ return {
 				end,
 			})
 
-			require("lspconfig").pyright.setup({
+			lsp_config.pyright.setup({
 				settings = {
 					pyright = {
 						disableOrganizeImports = true,

@@ -11,11 +11,13 @@ return {
 			if next(clients) == nil then
 				return msg
 			end
+			msg = ""
 			for _, client in ipairs(clients) do
-				local filetypes = client.config.filetypes
-				if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-					return client.name
-				end
+				msg = msg .. " " .. client.name .. " |"
+				-- local filetypes = client.config.filetypes
+				-- if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+				-- 	return client.name
+				-- end
 			end
 			return msg
 		end
@@ -23,7 +25,7 @@ return {
 		require("lualine").setup({
 			sections = {
 				lualine_c = {
-					{ lsp_servers, icon = " LSP:", color = { fg = "#ffffff", gui = "bold" } },
+					{ lsp_servers, icon = " LSP:", color = { fg = "#ffcc66", gui = "bold" } },
 				},
 				lualine_x = {
 					"whichpy",
