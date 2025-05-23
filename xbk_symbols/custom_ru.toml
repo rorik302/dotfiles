@@ -1,10 +1,10 @@
 # kalamine keyboard layout descriptor
 name        = "qwerty-custom"  # full layout name, displayed in the keyboard settings
 name8       = "custom"         # short Windows filename: no spaces, no special chars
-locale      = "us"             # locale/language id
+locale      = "ru"             # locale/language id
 variant     = "custom"         # layout variant id
 author      = "nobody"         # author name
-description = "custom QWERTY layout"
+description = "custom RU layout"
 url         = "https://OneDeadKey.github.com/kalamine"
 version     = "0.0.1"
 geometry    = "ANSI"
@@ -14,14 +14,14 @@ full = '''
 │ ~   │ !   │ @   │ #   │ $   │ %   │ ^   │ &   │ *   │ (   │ )   │ _   │ +   ┃          ┃
 │ `   │ 1   │ 2   │ 3   │ 4   │ 5   │ 6   │ 7   │ 8   │ 9   │ 0   │ -   │ =   ┃ ⌫        ┃
 ┢━━━━━┷━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┺━━┯━━━━━━━┩
-┃        ┃ Й   │ Ц   │ У   │ К   │ Е   │ Н   │ Г   │ Ш   │ Щ   │ З   │ Х { │ Ъ } │ |     │
-┃ ↹      ┃     │     │     │     │     │     │     │     │     │     │   [ │   ] │ \     │
+┃        ┃ Й   │ Ц   │ У   │ К   │ Е   │ Н   │ Г   │ Ш   │ Щ   │ З   │ Х   │ Ъ   │ |     │
+┃ ↹      ┃   ~ │   ` │   + │   = │   ё │   ' │   [ │   < │   > │   ] │     │     │ \     │
 ┣━━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┲━━━━┷━━━━━━━┪
-┃         ┃ Ф   │ Ы   │ В   │ А   │ П   │ Р   │ О   │ Л   │ Д   │ Ж : │ Э " ┃            ┃
-┃ ⇬       ┃     │     │     │     │     │     │     │     │     │   ; │   ' ┃ ⏎          ┃
+┃         ┃ Ф   │ Ы   │ В   │ А   │ П   │ Р   │ О   │ Л   │ Д   │ Ж   │ Э   ┃            ┃
+┃ ⇬       ┃     │     │   _ │   - │     │   " │   ( │   { │   } │   ) │     ┃ ⏎          ┃
 ┣━━━━━━━━━┻━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┲━━┻━━━━━━━━━━━━┫
-┃            ┃ Я   │ Ч   │ С   │ М   │ И   │ Т   │ Ь   │ Б < │ Ю > │ , ? ┃               ┃
-┃ ⇧          ┃     │     │     │     │     │     │     │   , │   . │ . / ┃ ⇧             ┃
+┃            ┃ Я   │ Ч   │ С   │ М   │ И   │ Т   │ Ь   │ Б   │ Ю   │ ,   ┃               ┃
+┃ ⇧          ┃     │   \ │   | │   / │     │   ; │   : │   , │   . │ .   ┃ ⇧             ┃
 ┣━━━━━━━┳━━━━┻━━┳━━┷━━━━┱┴─────┴─────┴─────┴─────┴─────┴─┲━━━┷━━━┳━┷━━━━━╋━━━━━━━┳━━━━━━━┫
 ┃       ┃       ┃       ┃                                ┃       ┃       ┃       ┃       ┃
 ┃ Ctrl  ┃ super ┃ Alt   ┃ ␣                              ┃ Alt   ┃ super ┃ menu  ┃ Ctrl  ┃
