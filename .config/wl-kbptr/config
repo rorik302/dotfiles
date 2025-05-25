@@ -5,8 +5,8 @@
 
 [general]
 home_row_keys=
-modes=tile,bisect,click
-# modes=floating,click
+# modes=tile,bisect
+modes=floating,click
 
 [mode_tile]
 label_color=#fffd
@@ -23,8 +23,10 @@ source=detect
 label_color=#fffd
 label_select_color=#fd0d
 unselectable_bg_color=#2226
-selectable_bg_color=#1718
-selectable_border_color=#040c
+# selectable_bg_color=#1718
+selectable_bg_color=#242936ce
+# selectable_border_color=#040c
+selectable_border_color=#ffffff9a
 label_font_family=sans-serif
 label_symbols=abcdefghijklmnopqrstuvwxyz
 
