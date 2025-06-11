@@ -35,5 +35,6 @@ alias y="yazi"
 
 # aliases
 alias pa="pikaur"
+alias rm="trash"
 
 set PATH $PATH /home/rorik/.local/bin
