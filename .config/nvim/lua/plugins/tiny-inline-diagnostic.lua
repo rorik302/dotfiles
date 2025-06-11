@@ -1,7 +1,9 @@
+vim.diagnostic.config({ virtual_text = false })
+
 return {
 	"rachartier/tiny-inline-diagnostic.nvim",
 	event = "VeryLazy",
-	priority = 1000,
+	priority = 10,
 	config = function()
 		require("tiny-inline-diagnostic").setup({
 			preset = "powerline",
@@ -16,10 +18,6 @@ return {
 				},
 				show_all_diag_on_cursorline = true,
 			},
-		})
-
-		vim.diagnostic.config({
-			virtual_text = false,
 		})
 	end,
 }

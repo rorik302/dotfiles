@@ -1,70 +1,74 @@
+local cmdline = {
+	keymap = { preset = "inherit" },
+	completion = {
+		ghost_text = { enabled = false },
+		list = {
+			selection = {
+				preselect = false,
+				auto_insert = false,
+			},
+		},
+		menu = {
+			auto_show = true,
+		},
+	},
+}
+
+local sources = {
+	default = { "lsp", "path", "buffer" },
+	providers = {
+		codeium = { name = "Codeium", module = "codeium.blink", async = true },
+	},
+}
+
+local keymap = {
+	preset = "default",
+	["<CR>"] = { "accept", "fallback" },
+}
+
+local completion = {
+	documentation = {
+		auto_show = true,
+		auto_show_delay_ms = 1000,
+		window = {
+			border = "rounded",
+		},
+	},
+	list = {
+		selection = {
+			preselect = false,
+			auto_insert = false,
+		},
+	},
+	menu = {
+		border = "rounded",
+		draw = {
+			columns = {
+				{ "label", "label_description", gap = 1 },
+				{ "kind_icon", "kind", gap = 1 },
+				{ "source_name" },
+			},
+			components = {
+				source_name = {
+					ellipsis = false,
+					text = function(ctx)
+						return "[" .. ctx.source_name .. "]"
+					end,
+				},
+			},
+		},
+	},
+}
+
 return {
 	"saghen/blink.cmp",
-	dependencies = {
-		"rafamadriz/friendly-snippets",
-	},
 	version = "1.*",
-	opts = {
-		keymap = {
-			preset = "none",
-			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-			["<C-e>"] = { "hide", "fallback" },
-			["<CR>"] = { "accept", "fallback" },
-			["<Up>"] = { "select_prev", "fallback" },
-			["<Down>"] = { "select_next", "fallback" },
-			["<C-b>"] = { "scroll_documentation_up", "fallback" },
-			["<C-f>"] = { "scroll_documentation_down", "fallback" },
-			["<Tab>"] = { "snippet_forward", "fallback" },
-			["<S-Tab>"] = { "snippet_backward", "fallback" },
-			["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
-		},
-		appearance = {
-			nerd_font_variant = "mono",
-		},
-		completion = {
-			menu = {
-				auto_show = false,
-				border = "rounded",
-				draw = {
-					columns = {
-						{ "kind_icon" },
-						{ "label", "label_description", gap = 1 },
-						{ "source_name" },
-					},
-				},
-			},
-			documentation = {
-				auto_show = true,
-				window = {
-					border = "rounded",
-				},
-			},
-			list = {
-				selection = {
-					preselect = false,
-					auto_insert = false,
-				},
-			},
-		},
-		signature = {
-			enabled = true,
-			window = {
-				border = "rounded",
-			},
-		},
-		sources = {
-			default = {
-				"lsp",
-				"path",
-				"snippets",
-				"buffer",
-			},
-		},
-		fuzzy = {
-			implementation = "prefer_rust_with_warning",
-		},
-	},
-	opts_extend = {
-		"sources.default",
-	},
+	config = function()
+		require("blink.cmp").setup({
+			cmdline = cmdline,
+			sources = sources,
+			keymap = keymap,
+			completion = completion,
+		})
+	end,
 }

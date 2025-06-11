@@ -6,21 +6,19 @@ return {
 			chunk = {
 				enable = true,
 				chars = {
-					horizontal_line = "─",
-					vertical_line = "│",
-					left_top = "╭",
-					left_bottom = "╰",
 					right_arrow = "─",
 				},
 				style = {
 					{ fg = "#ffcc66" },
 				},
+				use_treesitter = true,
 			},
 			line_num = {
 				enable = true,
 				style = {
 					{ fg = "#ffcc66" },
 				},
+				use_treesitter = true,
 			},
 		})
 	end,

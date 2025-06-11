@@ -1,6 +1,5 @@
 return {
 	"nvimdev/guard.nvim",
-	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"nvimdev/guard-collection",
 	},
@@ -8,8 +7,10 @@ return {
 		local ft = require("guard.filetype")
 
 		ft("lua"):fmt("stylua")
-
-		-- Возможно нужно отключить линтинг ruff, т.к. lsp уже это делает
-		ft("python"):fmt("ruff"):lint("mypy").append("ruff")
+		ft("python"):fmt("ruff"):append("black"):lint("ruff")
+		ft("typescript,javascript,typescriptreact,vue,jsx,html,json,yaml"):fmt("prettier")
+		ft("typescript,javascript"):lint("eslint_d")
+		ft("docker"):lint("hadolint")
+		ft("css,scss"):fmt("prettier"):lint("stylelint")
 	end,
 }
