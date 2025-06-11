@@ -1,31 +1,42 @@
-local o = vim.opt
+-- Строки
+vim.opt.number = true
+vim.opt.cursorline = true
+vim.opt.wrap = false
 
-o.breakindent = true
-o.clipboard = "unnamedplus"
-o.confirm = true
-o.cursorline = true
-o.expandtab = true
-o.ignorecase = true
-o.inccommand = "split"
-o.linebreak = true
-o.mouse = "a"
-o.number = true
-o.scrolloff = 10
-o.shiftwidth = 2
-o.signcolumn = "yes"
-o.sidescrolloff = 10
-o.smartcase = true
-o.smartindent = true
-o.softtabstop = 2
-o.spellfile = "$HOME/.config/nvim/spell/spell.utf-8.add"
-o.spelllang = "en_us,ru_ru"
-o.splitbelow = true
-o.splitright = true
-o.swapfile = false
-o.tabstop = 2
-o.termguicolors = true
-o.timeoutlen = 300
-o.undofile = true
-o.updatetime = 250
-o.wildmode = "longest:full,full"
-o.wrap = false
+-- Табы и отступы
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.breakindent = true
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 10
+
+-- Поиск
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.inccommand = "split"
+
+-- Буфер обмена
+vim.opt.clipboard:append("unnamedplus")
+
+-- Мышь
+vim.opt.mouse = ""
+
+-- Подтверждение выхода если файл не сохранен
+vim.opt.confirm = true
+
+-- Внешний вид
+vim.opt.termguicolors = true
+
+-- Таймауты
+vim.opt.timeoutlen = 300
+vim.opt.updatetime = 250
+
+-- Бэкап и своп
+vim.opt.writebackup = false
+vim.opt.swapfile = false
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/.undodir")
+
+vim.g.autoformat = true

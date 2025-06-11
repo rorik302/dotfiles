@@ -1,55 +1,40 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local map = require("utils").map
+vim.keymap.set("", "<Space>", "<Nop>")
 
--- Сброс стандартного поведения Space
-map("<Space>", "<Nop>", {}, { "n", "v" })
+vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>", { silent = true, desc = "Nvim: Clear search highlight" })
 
--- Операции и работа с буфером
-map("x", '"_x', { desc = "Delete without yank" }, { "n", "v" })
--- map("d", '"_d', { desc = "Delete without yank" }, { "n", "v" })
-map("<leader>d", [["_d]], { desc = "Delete without yank" }, { "n", "v" })
-map("<leader>p", [["_dP]], { desc = "Paste without yank" }, "x")
-map("p", '"_dP', { desc = "Paste without yank" }, "v")
+vim.keymap.set("n", "<leader>Q", vim.diagnostic.setloclist, { desc = "Nvim: Open Diagnostic Quickfix List" })
 
--- Коммандная строка
-function OpenCommandLine()
-	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(":", true, false, true), "n", false)
-end
-map("<leader><Space>", OpenCommandLine)
+vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Nvim: Save and quit", silent = true })
+vim.keymap.set("n", "<leader>qq", ":q!<CR>", { desc = "Nvim: Quit (Nvim/Window)", silent = true })
+vim.keymap.set("n", "<leader>qQ", ":qa!<CR>", { desc = "Nvim: Quit Without Save", silent = true })
+vim.keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Nvim: Save", silent = true })
 
--- Очистка результатов поиска
-map("<Esc>", ":nohlsearch<CR>", { desc = "Clean Search Highlight" })
+vim.keymap.set("n", "gF", ":! open <cfile>", { desc = "Open file/url under cursor" })
 
--- Сохранение и выход
-map("<leader>w", ":w<CR>", { desc = "Save" })
-map("<leader>q", ":q<CR>", { desc = "Quit" })
-map("<leader>Q", ":qa!<CR>", { desc = "Quit!" })
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Windows: Move focus to the left window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Windows: Move focus to the down window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Windows: Move focus to the up window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Windows: Move focus to the right window" })
 
--- Сдвиг текста
-map("K", ":move '<-2<CR>gv=gv", { desc = "Move Text Up" }, "v")
-map("J", ":move '>+1<CR>gv=gv", { desc = "Move Text Down" }, "v")
-map(">", ">gv", { desc = "Move Text Right" }, "v")
-map("<", "<gv", { desc = "Move Text Left" }, "v")
+vim.keymap.set({ "n", "v" }, "H", "^", { desc = "Cursor: Move to the beginning of the line" })
+vim.keymap.set({ "n", "v" }, "L", "$", { desc = "Cursor: Move to the end of the line" })
+vim.keymap.set("n", "j", "gj", { desc = "Cursor: Move to the next line" })
+vim.keymap.set("n", "k", "gk", { desc = "Cursor: Move to the previous line" })
+vim.keymap.set("n", "n", "nzz", { desc = "Cursor: Move to the next search result" })
+vim.keymap.set("n", "N", "Nzz", { desc = "Cursor: Move to the previous search result" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Cursor: Scroll down half a page" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Cursor: Scroll up half a page" })
 
--- Переключение окон
-map("<C-h>", "<C-w>h", { desc = "Window: Focus Left" })
-map("<C-j>", "<C-w>j", { desc = "Window: Focus Down" })
-map("<C-k>", "<C-w>k", { desc = "Window: Focus Up" })
-map("<C-l>", "<C-w>l", { desc = "Window: Focus Right" })
+vim.keymap.set({ "n", "v" }, "dd", '"_dd', { desc = "Delete: Line" })
+vim.keymap.set({ "n", "v" }, "x", '"_x', { desc = "Delete: Text" })
 
--- Изменение размеров окон
-map("<A-h>", "<C-w><", { desc = "Window: Resize Left" })
-map("<A-j>", "<C-w>-", { desc = "Window: Resize Down" })
-map("<A-k>", "<C-w>+", { desc = "Window: Resize Up" })
-map("<A-l>", "<C-w>>", { desc = "Window: Resize Right" })
+vim.keymap.set("v", "K", ":move '<-2<CR>gv=gv", { desc = "Move: Text Up" })
+vim.keymap.set("v", "J", ":move '>+1<CR>gv=gv", { desc = "Move: Text Down" })
+vim.keymap.set("v", ">", ">gv", { desc = "Move: Text Right" })
+vim.keymap.set("v", "<", "<gv", { desc = "Move: Text Left" })
 
--- Центрирование
-map("<C-d>", "<C-d>zz", { desc = "Scroll: Half Page Down" })
-map("<C-u>", "<C-u>zz", { desc = "Scroll: Half Page Up" })
-map("n", "nzzzv", { desc = "Search: Next" })
-map("N", "Nzzzv", { desc = "Search: Previous" })
-
--- UI
-map("<leader>uw", ":set wrap!<CR>", { desc = "Toggle Wrap" })
+vim.keymap.set("n", "<C-Tab>", ":bnext<CR>", { desc = "Buffer: Next" })
+vim.keymap.set("n", "<C-S-Tab>", ":bprevious<CR>", { desc = "Buffer: Previous" })
