@@ -1,6 +1,43 @@
-[manager]
+[mgr]
 prepend_keymap = [
- { on = [ "f" ], run = "plugin easyjump", desc = "easyjump" },
- { on = [ "M" ], run = "plugin mount", desc = "mount" },
- { on = [ "g", "l" ], run = "plugin lazygit", desc = "run lazygit" },
+  { on = [
+    "f",
+  ], run = "plugin easyjump", desc = "Eazyjump" },
+  { on = [
+    "M",
+  ], run = "plugin mount", desc = "Mount" },
+  { on = [
+    "g",
+    "l",
+  ], run = "plugin lazygit", desc = "Lazygit" },
+
+  { on = "u", run = "plugin restore", desc = "Restore deleted files/directoriesrestore" },
+  { on = "q", run = "plugin projects quit", desc = "Save last project and exit the process" },
+
+  # Sudo.yazi
+  { on = [
+    "R",
+    "p",
+    "p",
+  ], run = "plugin sudo -- paste", desc = "Sudo paste" },
+  { on = [
+    "R",
+    "P",
+  ], run = "plugin sudo -- paste --force", desc = "Sudo paste(force)" },
+  { on = [
+    "R",
+    "r",
+  ], run = "plugin sudo -- rename", desc = "Sudo rename" },
+  { on = [
+    "R",
+    "a",
+  ], run = "plugin sudo -- create", desc = "Sudo create" },
+  { on = [
+    "R",
+    "d",
+  ], run = "plugin sudo -- remove", desc = "Sudo trash" },
+  { on = [
+    "R",
+    "D",
+  ], run = "plugin sudo -- remove --permanently", desc = "Sudo delete" },
 ]
