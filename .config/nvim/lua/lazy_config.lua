@@ -15,26 +15,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  spec = {
-    { import = "plugins" },
-    -- {
-    --   "mfussenegger/nvim-dap",
-    --   dependencies = {
-    --     "rcarriga/nvim-dap-ui",
-    --     "nvim-neotest/nvim-nio",
-    --     "mfussenegger/nvim-dap-python",
-    --     "theHamsta/nvim-dap-virtual-text",
-    --   },
-    -- },
-  },
-  checker = {
-    enabled = true,
-    notify = false,
-  },
-  change_detection = {
-    notify = false,
-  },
-  ui = {
-    border = "rounded",
-  },
+	spec = {
+		{ import = "plugins" },
+	},
+	checker = {
+		enabled = true,
+		notify = false,
+	},
+	change_detection = {
+		notify = false,
+	},
+	ui = {
+		border = "rounded",
+	},
 })

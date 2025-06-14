@@ -15,8 +15,9 @@ local cmdline = {
 }
 
 local sources = {
-	default = { "lsp", "path", "buffer" },
+	default = { "lazydev", "lsp", "path", "buffer" },
 	providers = {
+		lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100 },
 		codeium = { name = "Codeium", module = "codeium.blink", async = true },
 	},
 }
