@@ -1,13 +1,13 @@
 # kalamine keyboard layout descriptor
-name        = "qwerty-custom"  # full layout name, displayed in the keyboard settings
-name8       = "custom"         # short Windows filename: no spaces, no special chars
-locale      = "ru"             # locale/language id
-variant     = "custom"         # layout variant id
-author      = "nobody"         # author name
+name = "qwerty-custom"                         # full layout name, displayed in the keyboard settings
+name8 = "custom"                               # short Windows filename: no spaces, no special chars
+locale = "ru"                                  # locale/language id
+variant = "custom"                             # layout variant id
+author = "nobody"                              # author name
 description = "custom RU layout"
-url         = "https://OneDeadKey.github.com/kalamine"
-version     = "0.0.1"
-geometry    = "ANSI"
+url = "https://OneDeadKey.github.com/kalamine"
+version = "0.0.1"
+geometry = "ANSI"
 
 full = '''
 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━━┓
@@ -21,13 +21,12 @@ full = '''
 ┃ ⇬       ┃     │     │   _ │   - │     │   " │   ( │   { │   } │   ) │     ┃ ⏎          ┃
 ┣━━━━━━━━━┻━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┲━━┻━━━━━━━━━━━━┫
 ┃            ┃ Я   │ Ч   │ С   │ М   │ И   │ Т   │ Ь   │ Б   │ Ю   │ ,   ┃               ┃
-┃ ⇧          ┃     │   \ │   | │   / │     │   ; │   : │   , │   . │ .   ┃ ⇧             ┃
+┃ ⇧          ┃     │   \ │   | │   / │     │   ; │   : │   , │   . │ . ? ┃ ⇧             ┃
 ┣━━━━━━━┳━━━━┻━━┳━━┷━━━━┱┴─────┴─────┴─────┴─────┴─────┴─┲━━━┷━━━┳━┷━━━━━╋━━━━━━━┳━━━━━━━┫
 ┃       ┃       ┃       ┃                                ┃       ┃       ┃       ┃       ┃
 ┃ Ctrl  ┃ super ┃ Alt   ┃ ␣                              ┃ Alt   ┃ super ┃ menu  ┃ Ctrl  ┃
 ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 '''
-
 
 
 # --------------------------------------------------------------------------------
