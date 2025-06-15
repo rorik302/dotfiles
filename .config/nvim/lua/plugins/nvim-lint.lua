@@ -17,6 +17,16 @@ return {
 			dockerfile = { "hadolint" },
 		}
 
+		table.insert(lint.linters.selene.args, function()
+			local root = vim.fs.root(0, "selene.toml")
+
+			if not root then
+				root = vim.fn.stdpath("config")
+			end
+
+			return string.format("--config=%s", vim.fs.joinpath(root, "selene.toml"))
+		end)
+
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 			callback = function()
 				lint.try_lint()
