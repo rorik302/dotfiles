@@ -35,3 +35,6 @@ vim.keymap.set("v", "K", ":move '<-2<CR>gv=gv", { desc = "Move: Text Up" })
 vim.keymap.set("v", "J", ":move '>+1<CR>gv=gv", { desc = "Move: Text Down" })
 vim.keymap.set("v", ">", ">gv", { desc = "Move: Text Right" })
 vim.keymap.set("v", "<", "<gv", { desc = "Move: Text Left" })
+
+vim.keymap.set("n", "<leader>bn", ":BufferNext<CR>", { desc = "Buffer: Next", silent = true })
+vim.keymap.set("n", "<leader>bp", ":BufferPrevious<CR>", { desc = "Buffer: Previous", silent = true })

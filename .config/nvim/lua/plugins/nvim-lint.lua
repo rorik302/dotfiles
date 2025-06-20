@@ -27,7 +27,7 @@ return {
 			return string.format("--config=%s", vim.fs.joinpath(root, "selene.toml"))
 		end)
 
-		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 			callback = function()
 				lint.try_lint()
 			end,
