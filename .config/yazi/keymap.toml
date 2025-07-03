@@ -1,43 +1,83 @@
-[mgr]
-prepend_keymap = [
-  { on = [
-    "f",
-  ], run = "plugin easyjump", desc = "Eazyjump" },
-  { on = [
-    "M",
-  ], run = "plugin mount", desc = "Mount" },
-  { on = [
-    "g",
-    "l",
-  ], run = "plugin lazygit", desc = "Lazygit" },
-
-  { on = "u", run = "plugin restore", desc = "Restore deleted files/directoriesrestore" },
-  { on = "q", run = "plugin projects quit", desc = "Save last project and exit the process" },
-
-  # Sudo.yazi
-  { on = [
-    "R",
-    "p",
-    "p",
-  ], run = "plugin sudo -- paste", desc = "Sudo paste" },
-  { on = [
-    "R",
-    "P",
-  ], run = "plugin sudo -- paste --force", desc = "Sudo paste(force)" },
-  { on = [
-    "R",
-    "r",
-  ], run = "plugin sudo -- rename", desc = "Sudo rename" },
-  { on = [
-    "R",
-    "a",
-  ], run = "plugin sudo -- create", desc = "Sudo create" },
-  { on = [
-    "R",
-    "d",
-  ], run = "plugin sudo -- remove", desc = "Sudo trash" },
-  { on = [
-    "R",
-    "D",
-  ], run = "plugin sudo -- remove --permanently", desc = "Sudo delete" },
+# Copy to system clipboard
+[[mgr.prepend_keymap]]
+on = ["y"]
+run = [
+  'shell -- for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list',
+  "yank",
 ]
+
+# Confirm quit
+[[mgr.prepend_keymap]]
+on = ["q"]
+run = ["plugin confirm-quit"]
+
+# Chmod plugin
+[[mgr.prepend_keymap]]
+on = ["c", "m"]
+run = "plugin chmod"
+desc = "Chmod on selected files"
+
+# Lazygit plugin
+[[mgr.prepend_keymap]]
+on = ["g", "i"]
+run = "plugin lazygit"
+desc = "run lazygit"
+
+# Sudo plugin
+[[mgr.prepend_keymap]]
+on = ["R", "p", "p"]
+run = "plugin sudo -- paste"
+desc = "sudo paste"
+
+[[mgr.prepend_keymap]]
+on = ["R", "P"]
+run = "plugin sudo -- paste --force"
+desc = "sudo paste"
+
+[[mgr.prepend_keymap]]
+on = ["R", "r"]
+run = "plugin sudo -- rename"
+desc = "sudo rename"
+
+[[mgr.prepend_keymap]]
+on = ["R", "p", "l"]
+run = "plugin sudo -- link --relative"
+desc = "sudo link relative path"
+
+[[mgr.prepend_keymap]]
+on = ["R", "p", "L"]
+run = "plugin sudo -- hardlink"
+desc = "sudo hardlink"
+
+[[mgr.prepend_keymap]]
+on = ["R", "a"]
+run = "plugin sudo -- create"
+desc = "sudo create"
+
+[[mgr.prepend_keymap]]
+on = ["R", "d"]
+run = "plugin sudo -- remove"
+desc = "sudo trash"
+
+[[mgr.prepend_keymap]]
+on = ["R", "D"]
+run = "plugin sudo -- remove --permanently"
+desc = "sudo delete"
+
+# Restore plugin
+[[mgr.prepend_keymap]]
+on = ["U"]
+run = "plugin restore"
+desc = "Restore last deleted files/folders"
+
+# Mount plugin
+[[mgr.prepend_keymap]]
+on = ["M"]
+run = "plugin mount"
+desc = "Mount disks"
+
+# Easyjump plugin
+[[mgr.prepend_keymap]]
+on = ["f"]
+run = "plugin easyjump"
+desc = "easyjump"
