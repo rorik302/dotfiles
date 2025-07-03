@@ -1,0 +1,105 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "theme.font.size": "0.9rem",
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "updates",
+        "media",
+        "cava",
+        "netstat"
+      ],
+      "right": [
+        "kbinput",
+        "volume",
+        "network",
+        "bluetooth",
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    },
+    "2": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "theme.bar.floating": false,
+  "theme.bar.buttons.enableBorders": false,
+  "theme.bar.border.location": "none",
+  "notifications.timeout": 5000,
+  "menus.clock.time.military": true,
+  "menus.clock.time.hideSeconds": true,
+  "menus.clock.weather.location": "Rostov",
+  "menus.clock.weather.unit": "metric",
+  "theme.bar.buttons.modules.kbLayout.enableBorder": false,
+  "theme.bar.buttons.bluetooth.enableBorder": false,
+  "bar.bluetooth.label": false,
+  "theme.bar.buttons.systray.enableBorder": false,
+  "bar.clock.format": "%a, %d %b %I:%M",
+  "bar.clock.showIcon": true,
+  "bar.clock.showTime": true,
+  "bar.network.label": false,
+  "bar.network.truncation": false,
+  "bar.network.showWifiInfo": false,
+  "bar.volume.label": false,
+  "theme.bar.buttons.windowtitle.enableBorder": false,
+  "bar.windowtitle.custom_title": true,
+  "theme.bar.buttons.workspaces.enableBorder": false,
+  "bar.workspaces.monitorSpecific": false,
+  "bar.workspaces.show_icons": false,
+  "bar.workspaces.show_numbered": false,
+  "bar.workspaces.workspaceMask": false,
+  "bar.workspaces.showWsIcons": true,
+  "bar.workspaces.showApplicationIcons": true,
+  "bar.workspaces.applicationIconOncePerWorkspace": true,
+  "bar.workspaces.showAllActive": true,
+  "theme.bar.buttons.workspaces.smartHighlight": true,
+  "bar.launcher.autoDetectIcon": false,
+  "theme.bar.buttons.dashboard.enableBorder": false,
+  "bar.customModules.netstat.label": true,
+  "bar.customModules.netstat.dynamicIcon": true,
+  "bar.customModules.netstat.rateUnit": "auto",
+  "bar.customModules.netstat.labelType": "full",
+  "bar.customModules.kbLayout.label": true,
+  "bar.customModules.kbLayout.labelType": "code",
+  "bar.customModules.cava.icon": "",
+  "theme.bar.buttons.modules.cava.spacing": "0.5em",
+  "bar.customModules.cava.showActiveOnly": true,
+  "bar.customModules.cava.autoSensitivity": true,
+  "bar.customModules.cava.showIcon": true,
+  "theme.bar.buttons.modules.cava.enableBorder": false
+}
