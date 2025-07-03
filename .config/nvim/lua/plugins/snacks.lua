@@ -32,7 +32,7 @@ vim.keymap.set("n", "<leader>dr", function()
 end, { desc = "Debug: Run" })
 
 vim.keymap.set("n", "<leader>ee", function()
-	Snacks.explorer({ auto_close = true })
+	Snacks.explorer()
 end, { desc = "Explorer: Open" })
 
 vim.keymap.set("n", "<leader>ff", function()

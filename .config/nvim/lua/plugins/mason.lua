@@ -22,6 +22,7 @@ local tools = {
 	"hadolint",
 	"prettier",
 	"ruff",
+	"selene",
 	"stylelint",
 	"stylua",
 }
