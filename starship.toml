@@ -80,6 +80,7 @@ format = '[─](fg:current_line)[](fg:pink)[ path ](fg:primary bg:pink)[](
 home_symbol = "~"
 # truncation_symbol = ' '
 # truncation_length = 2
+truncate_to_repo = false
 # read_only = '󱧵 '
 read_only_style = ''
 
